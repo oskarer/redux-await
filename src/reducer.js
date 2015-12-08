@@ -25,7 +25,7 @@ export default reducer => (state, action) => {
         }
       }
     });
-    const nextState = { ...state, [AWAIT_INFO_CONTAINER]: { statuses, errors } };
+    const nextState = state.merge({[AWAIT_INFO_CONTAINER]: { statuses, errors }})
 
     return reducer(nextState, action, state);
   }
